@@ -5,6 +5,7 @@ import { Header } from "./components/Header";
 import { Spend } from "./components/spend";
 import { Transactions } from "./components/transactList";
 import { New } from "./components/Add_trans";
+// import {Register} from "./components/auth/register";
 const App = () => {
   // const [onAddTransaction, setOnAddTransaction] = useState({
   //   text1: "",
