@@ -79,6 +79,21 @@ body {
   margin-bottom: 20px;
 }
 
+.auth {
+  align-items: center;
+  padding: 10px 0px;
+  width: 100%;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  width: 100%;
+}
+
 .wrapper {
   align-items: center;
   justify-content: center;

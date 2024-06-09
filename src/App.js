@@ -1,25 +1,20 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import signIn from "./components/auth/register";
-import mainSite from "./components/auth/mainSite";
-import SignUp from "./components/auth/signUp";
-import { redirect } from "react-router-dom";
+import SignIn from "./components/auth/register";
+import "./App.css";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
+// import Switch from "react-bootstrap/esm/Switch";
+// import signIn from "./components/auth/register";
+// import mainSite from "./components/mainSite";
+// import SignUp from "./components/auth/signUp";
+// import { redirect } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <Route exact path="/register">
-        {" "}
-        {authCheck ? <Redirect to="/mainSite" /> : <SignUp />}{" "}
-      </Route>{" "}
-      <Route exact path="/mainSite">
-        <mainSite />
-      </Route>{" "}
-      <Route exact path="/signIn">
-        <signIn />
-      </Route>{" "}
-    </Router>
+    <>
+      {" "}
+      <SignIn /> ;{" "}
+    </>
   );
-}
+};
 
 export default App;

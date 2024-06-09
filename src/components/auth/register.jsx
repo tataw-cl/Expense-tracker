@@ -3,7 +3,7 @@ import { auth } from "./firebase/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import SignUp from "./signUp";
 
-const signIn = ({ userInfo }) => {
+const SignIn = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -21,9 +21,9 @@ const signIn = ({ userInfo }) => {
   };
 
   return (
-    <div>
+    <div className="auth">
       <h2>SignIn to the expense tracking site</h2>
-      <form onSubmit={userInfo}>
+      <form onSubmit={userInfo} className="form">
         <label>Email:</label>
         <input
           type="email"
@@ -45,7 +45,7 @@ const signIn = ({ userInfo }) => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button type="button" onClick={handleRegister}>
+        <button type="submit" onClick={userInfo}>
           SignIn
         </button>
       </form>
@@ -55,4 +55,4 @@ const signIn = ({ userInfo }) => {
   );
 };
 
-export default signIn;
+export default SignIn;

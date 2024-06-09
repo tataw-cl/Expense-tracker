@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "../../App.css";
-import { Balance } from "../Balance";
-import { Header } from "../Header";
-import { Spend } from "../spend";
-import { Transactions } from "../transactList";
-import { New } from "../Add_trans";
+import { Balance } from "./Balance";
+import { Header } from "./Header";
+import { Spend } from "./spend";
+import { Transactions } from "./transactList";
+import { New } from "./Add_trans";
 // import {Register} from "./components/auth/register";
 const mainSite = () => {
   // const [onAddTransaction, setOnAddTransaction] = useState({
