@@ -1,12 +1,11 @@
 import { useState } from "react";
-import "../../App.css";
 import { Balance } from "./Balance";
 import { Header } from "./Header";
 import { Spend } from "./spend";
 import { Transactions } from "./transactList";
 import { New } from "./Add_trans";
 // import {Register} from "./components/auth/register";
-const mainSite = () => {
+const MainSite = () => {
   // const [onAddTransaction, setOnAddTransaction] = useState({
   //   text1: "",
   //   amount1: 0,
@@ -58,4 +57,4 @@ const mainSite = () => {
   );
 };
 
-export default mainSite;
+export default MainSite;
