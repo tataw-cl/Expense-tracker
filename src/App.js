@@ -5,15 +5,15 @@ import { AuthProvider } from "./components/auth/context/AuthContext";
 import SignUp from "./components/auth/signUp";
 import Login from "./components/auth/Login";
 import MainSite from "./components/mainSite";
-import PrivateRoute from "./components/auth/privateRoute";
+// import PrivateRoute from "./components/auth/privateRoute";
 
 const App = () => {
     return (
         <Router>
             <AuthProvider>
                 <Routes>
-                    <Route path="/*" element={<PrivateRoute component={MainSite} />} />
-                    {/* <Route path="/Homepage" element={<MainSite />} /> */}
+                {/* <Route path="/" element={<PrivateRoute {...MainSite}></PrivateRoute>} /> */}
+                    <Route path="/" element={<MainSite />} />
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/login" element={<Login/>} />
                 </Routes>
