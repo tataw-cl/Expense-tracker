@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import { Spend } from "./spend";
 import { Transactions } from "./transactList";
 import { New } from "./Add_trans";
+import Charts from "./chart_example";
 // import {Register} from "./components/auth/register";
 const MainSite = () => {
   // const [onAddTransaction, setOnAddTransaction] = useState({
@@ -53,6 +54,7 @@ const MainSite = () => {
         // onAddTransaction={onAddTransaction}
         onHandleAddTransaction={handleAddTransaction}
       />{" "}
+      <Charts transactions={transactions} />
     </div>
   );
 };
