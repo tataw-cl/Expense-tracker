@@ -16,7 +16,7 @@ export const New = ({ onHandleAddTransaction }) => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`Text: ${text}, Amount: ${amount}`);
+    // console.log(`Text: ${text}, Amount: ${amount}`);
     onHandleAddTransaction(text, amount);
   };
   return (
