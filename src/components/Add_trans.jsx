@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import Card from '@mui/material/Card';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import MenuItem from '@mui/material/MenuItem';
+
 export const New = ({ onHandleAddTransaction }) => {
-  // let onAddTransaction = {
-  //   text1: "",
-  //   amount1: 0,
-  // };
-  // const [trans, setTrans] = useState([]);
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
+  const [category, setCategory] = useState("");
 
   const handleTextChange = (event) => {
     setText(event.target.value);
@@ -14,43 +16,57 @@ export const New = ({ onHandleAddTransaction }) => {
   const handleAmountChange = (event) => {
     setAmount(event.target.value);
   };
+  const handleCategoryChange = (event) => {
+    setCategory(event.target.value);
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(`Text: ${text}, Amount: ${amount}`);
-    onHandleAddTransaction(text, amount);
+    onHandleAddTransaction(text, amount, category);
+    setText("");
+    setAmount(0);
+    setCategory("");
   };
   return (
-    <div>
-      <h2>Add new transaction</h2>
-      <hr />
+    <Card sx={{ p: 2 }}>
+      <Typography variant="h6" sx={{ mb: 2 }}>Add new transaction</Typography>
       <form onSubmit={handleSubmit}>
-        <div className="form-control">
-          <label htmlFor="text">Text</label>
-          <input
-            type="text"
-            id="text"
-            placeholder="Enter text..."
-            value={text}
-            onChange={handleTextChange}
-          />
-        </div>
-        <div className="form-control">
-          <label htmlFor="amount">
-            Amount <br />
-            (Put a negative(-) for expense, positive for income)
-          </label>
-          <input
-            type="number"
-            id="amount"
-            placeholder="Enter amount..."
-            value={amount}
-            onChange={handleAmountChange}
-          />
-        </div>
-        <button type="submit" className="btn">
-          Add transaction
-        </button>
+        <TextField
+          label="Text"
+          variant="outlined"
+          fullWidth
+          value={text}
+          onChange={handleTextChange}
+          sx={{ mb: 2 }}
+        />
+        <TextField
+          label="Amount"
+          variant="outlined"
+          fullWidth
+          type="number"
+          value={amount}
+          onChange={handleAmountChange}
+          helperText="(Put a negative(-) for expense, positive for income)"
+          sx={{ mb: 2 }}
+        />
+        <TextField
+          select
+          label="Category"
+          value={category}
+          onChange={handleCategoryChange}
+          fullWidth
+          sx={{ mb: 2 }}
+        >
+          <MenuItem value="Income">Income</MenuItem>
+          <MenuItem value="Food">Food</MenuItem>
+          <MenuItem value="Transport">Transport</MenuItem>
+          <MenuItem value="Shopping">Shopping</MenuItem>
+          <MenuItem value="Bills">Bills</MenuItem>
+          <MenuItem value="Other">Other</MenuItem>
+        </TextField>
+        <Button type="submit" variant="contained" color="primary" fullWidth>
+          Add Transaction
+        </Button>
       </form>
-    </div>
+    </Card>
   );
 };
